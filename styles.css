@@ -1,1 +1,89 @@
+:root {
+    --roxo: #d3b4ff;
+    --rosa: #ffc4e3;
+    --azul: #bfe5ff;
+    --verde: #caffd7;
+    --amarelo: #fff7bf;
+    --vidro: rgba(255,255,255,0.25);
+    --borda-vidro: rgba(255,255,255,0.45);
+    --sombra: rgba(0,0,0,0.15);
+}
+
+/* GLOBAL */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, var(--rosa), var(--azul), var(--verde), var(--amarelo));
+    background-size: 300% 300%;
+    animation: bgMove 12s ease infinite;
+}
+
+@keyframes bgMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* HEADER */
+header {
+    position: fixed;
+    top: 0; left: 0; right:0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    backdrop-filter: blur(12px);
+    background: var(--vidro);
+    border-bottom: 1px solid var(--borda-vidro);
+    z-index: 999;
+}
+
+header h2 { margin: 0; }
+nav a { margin-left: 20px; text-decoration: none; font-weight: bold; color:#444;}
+nav a:hover { color: purple; }
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.hero h1 { font-size: 3rem; margin-bottom: 20px; animation: fadeIn 2s;}
+.hero p { font-size: 1.2rem; margin-bottom: 30px; animation: fadeIn 2s 0.5s; }
+.hero .btn {
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    background: var(--roxo);
+    color: #333;
+    box-shadow: 0 5px 15px var(--sombra);
+    transition: transform .3s, box-shadow .3s;
+}
+.hero .btn:hover { transform: scale(1.05); box-shadow: 0 8px 25px var(--sombra); }
+
+/* ANIMAÇÃO FADE */
+@keyframes fadeIn { from {opacity:0; transform: translateY(20px);} to {opacity:1; transform:translateY(0);} }
+
+/* BOTÃO WHATSAPP */
+.whats-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background:#25D366;
+    font-size:32px;
+    padding:14px 18px;
+    border-radius:50%;
+    color:white;
+    text-decoration:none;
+    box-shadow:0 5px 15px var(--sombra);
+}
+
+/* FOOTER */
+footer { text-align:center; padding:20px; background: var(--vidro); margin-top:40px; }
 
